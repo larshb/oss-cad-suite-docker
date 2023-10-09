@@ -2,14 +2,14 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt -y update
-RUN apt -y upgrade
-RUN apt -y install bc unzip rsync bison flex gawk git pkg-config \
+RUN apt -y update && \
+    apt -y upgrade && \
+    apt -y install bc unzip rsync bison flex gawk git pkg-config \
         python3 python3-cairo python3-cairo-dev adwaita-icon-theme-full cmake \
         wget gperf autoconf curl pax-utils qt5-qmake qtbase5-dev-tools \
-        libtool llvm default-jre tclsh
-RUN apt -y autoremove
-RUN rm -rf /var/lib/apt/lists/*
+        libtool llvm default-jre tclsh && \
+    apt -y autoremove && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV RUSTUP_HOME /opt/rust/rustup
 ENV PATH ${PATH}:/opt/rust/cargo/bin
