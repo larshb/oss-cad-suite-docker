@@ -7,7 +7,7 @@ RUN apt -y upgrade
 RUN apt -y install bc unzip rsync bison flex gawk git pkg-config \
         python3 python3-cairo python3-cairo-dev adwaita-icon-theme-full cmake \
         wget gperf autoconf curl pax-utils qt5-qmake qtbase5-dev-tools \
-        libtool llvm default-jre
+        libtool llvm default-jre tclsh
 RUN apt -y autoremove
 RUN rm -rf /var/lib/apt/lists/*
 
